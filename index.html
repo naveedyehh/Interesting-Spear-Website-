@@ -88,22 +88,13 @@
   <iframe id="previewIframe" allow="autoplay"></iframe>
 </div>
 
-<!-- ==================== Propeller Ads ==================== -->
-
-<!-- Interstitial Ad -->
-<script>
-(function(s){
-  s.dataset.zone='9899649'; // apna zone id
-  s.src='https://groleegni.net/vignette.min.js';
-})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
-</script>
-
-<!-- Popunder Ad -->
+<!-- Popunder Ad (Propeller) -->
 <script data-cfasync="false" type="text/javascript">
-(()=>{var K='...'; /* yaha apna full popunder script paste kare jo propeller se mila hai */})();
+(()=>{ 
+   // yaha tumhara pura Popunder script paste karo
+})();
 </script>
 
-<!-- ==================== Scripts ==================== -->
 <script>
 const FREE_CLIPS = [
   "1Ih36SSEs5tOBEv_qs7rKLvB3PntvtmTZ","1BgJg4IPGoEbHZgxGqAQaqnG_7MtiAsZ9","1bNWEQEJeVEenTiinaVfj1THYbHgK-p5e",
@@ -147,16 +138,25 @@ FREE_CLIPS.forEach((id, i) => {
 });
 
 function openPreview(src){
-  const modal=document.getElementById('previewModal');
-  const iframe=document.getElementById('previewIframe');
-  iframe.src=src;
-  modal.classList.add('show');
+  // Interstitial reload trick
+  let old = document.getElementById("interstitialScript");
+  if(old) old.remove();
 
-  // interstitial ad trigger
-  if (typeof _pm !== "undefined" && _pm.vignette) {
-    try { _pm.vignette.display(); } catch(e) {}
-  }
+  let s = document.createElement("script");
+  s.id = "interstitialScript";
+  s.dataset.zone = "9899649"; // apna zone id
+  s.src = "https://groleegni.net/vignette.min.js";
+  document.body.appendChild(s);
+
+  // Delay ke baad modal show
+  setTimeout(()=>{
+    const modal=document.getElementById('previewModal');
+    const iframe=document.getElementById('previewIframe');
+    iframe.src=src;
+    modal.classList.add('show');
+  }, 4000);
 }
+
 function closePreview(){
   const modal=document.getElementById('previewModal');
   const iframe=document.getElementById('previewIframe');
@@ -167,4 +167,3 @@ function closePreview(){
 
 </body>
 </html>
-
