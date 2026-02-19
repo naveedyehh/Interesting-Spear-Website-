@@ -1,169 +1,566 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Interesting Spear — Free 50 Luxury Clips</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{--bg:#050505;--card:#0b0b0b;--gold:#d4af37;--muted:#9b9b9b}
-    *{box-sizing:border-box;font-family:Inter,Arial,sans-serif}
-    body{margin:0;background:linear-gradient(180deg,#000 0%, #071018 100%);color:#fff}
-    header{padding:28px 24px;display:flex;align-items:center;justify-content:space-between}
-    .logo{display:flex;gap:12px;align-items:center}
-    .logo .mark{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--gold),#b27f1f);display:flex;align-items:center;justify-content:center;color:#050505;font-weight:800}
-    .nav a{color:var(--muted);margin-left:18px;text-decoration:none}
-    .hero{padding:40px 24px;display:flex;gap:32px;align-items:center}
-    .hero-left{flex:1}
-    h1{font-size:34px;margin:0 0 12px 0}
-    p.lead{color:var(--muted);max-width:620px}
-    .btn{background:var(--gold);color:#050505;padding:10px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
-    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-    .hero-right{width:420px;height:280px;background:url('https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg') center/cover;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
-    .section{padding:28px 24px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-    .card{background:var(--card);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.05)}
-    .clip-thumb{height:140px;border-radius:8px;overflow:hidden;background:#000;display:flex;align-items:center;justify-content:center}
-    .clip-thumb video{width:100%;height:100%;object-fit:cover}
-    .meta{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
-    .muted{color:var(--muted);font-size:13px}
-    .free-badge{color:var(--gold);font-weight:700}
-    footer{padding:20px 24px;color:var(--muted);border-top:1px solid rgba(255,255,255,0.05);margin-top:18px}
-    .modal{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:none;align-items:center;justify-content:center;z-index:1000}
-    .modal.show{display:flex}
-    .modal iframe{width:80%;height:70%;border:none;border-radius:12px;box-shadow:0 0 20px rgba(0,0,0,0.7)}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Interesting Spear — Luxury Clips for Creators</title>
+<meta name="description" content="Explore 50 free cinematic luxury clips and discover premium packs for creators.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+--bg: #050505;
+--card: #0f1117;
+--gold: #d4af37;
+--gold-soft: rgba(212, 175, 55, 0.18);
+--muted: #a1a1aa;
+--line: rgba(255, 255, 255, 0.08);
+--text: #f8f8f8;
+}
+
+* {
+box-sizing: border-box;
+font-family: Inter, Arial, sans-serif;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+margin: 0;
+background: radial-gradient(circle at top right, #122031 0%, #060606 42%, #020202 100%);
+color: var(--text);
+line-height: 1.5;
+}
+
+.container {
+width: min(1180px, 94vw);
+margin: 0 auto;
+}
+
+.topbar {
+position: sticky;
+top: 0;
+z-index: 10;
+backdrop-filter: blur(8px);
+background: rgba(5, 5, 5, 0.82);
+border-bottom: 1px solid var(--line);
+}
+
+header {
+padding: 18px 0;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 16px;
+}
+
+.logo {
+display: flex;
+gap: 12px;
+align-items: center;
+min-width: fit-content;
+}
+
+.logo .mark {
+width: 44px;
+height: 44px;
+border-radius: 12px;
+background: linear-gradient(135deg, var(--gold), #b27f1f);
+display: flex;
+align-items: center;
+justify-content: center;
+color: #050505;
+font-weight: 800;
+box-shadow: 0 10px 24px rgba(212, 175, 55, 0.2);
+}
+
+.nav {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+justify-content: flex-end;
+gap: 14px;
+}
+
+.nav a {
+color: var(--muted);
+text-decoration: none;
+font-size: 14px;
+transition: color 0.2s ease;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+color: var(--text);
+}
+
+.hero {
+padding: 56px 0 24px;
+display: grid;
+grid-template-columns: 1.25fr 1fr;
+gap: 28px;
+align-items: center;
+}
+
+.eyebrow {
+font-size: 12px;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(--gold);
+margin-bottom: 14px;
+font-weight: 700;
+}
+
+h1 {
+font-size: clamp(2rem, 4vw, 3rem);
+line-height: 1.1;
+margin: 0 0 14px;
+max-width: 20ch;
+}
+
+p.lead {
+color: var(--muted);
+max-width: 62ch;
+margin: 0 0 24px;
+}
+
+.actions {
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+}
+
+.btn {
+background: var(--gold);
+color: #050505;
+padding: 10px 16px;
+border-radius: 10px;
+border: 1px solid transparent;
+cursor: pointer;
+font-weight: 700;
+text-decoration: none;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+min-height: 40px;
+}
+
+.btn:hover,
+.btn:focus-visible {
+transform: translateY(-1px);
+box-shadow: 0 10px 24px rgba(212, 175, 55, 0.25);
+}
+
+.btn.ghost {
+background: transparent;
+border-color: var(--line);
+color: var(--text);
+box-shadow: none;
+}
+
+.hero-right {
+min-height: 300px;
+border-radius: 16px;
+overflow: hidden;
+border: 1px solid var(--line);
+box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
+background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)),
+url('https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg') center/cover;
+display: flex;
+align-items: flex-end;
+padding: 20px;
+}
+
+.hero-stat {
+display: flex;
+gap: 12px;
+align-items: center;
+padding: 12px 14px;
+border: 1px solid var(--line);
+border-radius: 10px;
+background: rgba(7, 9, 12, 0.72);
+width: fit-content;
+}
+
+.hero-stat strong {
+display: block;
+font-size: 20px;
+line-height: 1;
+}
+
+.hero-stat span {
+color: var(--muted);
+font-size: 12px;
+}
+
+.section {
+padding: 32px 0;
+}
+
+.section h2 {
+margin-top: 0;
+margin-bottom: 14px;
+font-size: 1.7rem;
+}
+
+.subtle {
+color: var(--muted);
+margin: 0 0 20px;
+}
+
+.toolbar {
+display: grid;
+grid-template-columns: minmax(200px, 1fr) minmax(160px, 220px) auto;
+gap: 10px;
+margin-bottom: 16px;
+align-items: center;
+}
+
+.field,
+select {
+width: 100%;
+border-radius: 10px;
+border: 1px solid var(--line);
+background: rgba(255, 255, 255, 0.01);
+color: var(--text);
+padding: 10px 12px;
+outline: none;
+}
+
+.field:focus-visible,
+select:focus-visible {
+border-color: var(--gold);
+box-shadow: 0 0 0 3px var(--gold-soft);
+}
+
+.count {
+color: var(--muted);
+font-size: 14px;
+justify-self: end;
+white-space: nowrap;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 16px;
+}
+
+.card {
+background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent), var(--card);
+padding: 14px;
+border-radius: 14px;
+border: 1px solid var(--line);
+}
+
+.clip-thumb {
+height: 140px;
+border-radius: 10px;
+overflow: hidden;
+background: #000;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.clip-thumb video {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.meta {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-top: 10px;
+gap: 10px;
+}
+
+.muted {
+color: var(--muted);
+font-size: 13px;
+margin: 6px 0 0;
+}
+
+.free-badge {
+color: var(--gold);
+font-weight: 700;
+font-size: 12px;
+letter-spacing: 0.08em;
+}
+
+.card-actions {
+margin-top: 10px;
+display: flex;
+gap: 8px;
+}
+
+.card-actions .btn {
+flex: 1;
+padding: 8px 10px;
+min-height: 36px;
+font-size: 14px;
+}
+
+.pricing {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 16px;
+}
+
+.price-tag {
+margin: 8px 0 12px;
+font-size: 1.5rem;
+font-weight: 800;
+color: var(--gold);
+}
+
+footer {
+padding: 24px 0 40px;
+color: var(--muted);
+border-top: 1px solid var(--line);
+margin-top: 18px;
+font-size: 14px;
+}
+
+.modal {
+position: fixed;
+inset: 0;
+background: rgba(0, 0, 0, 0.85);
+display: none;
+align-items: center;
+justify-content: center;
+z-index: 1000;
+padding: 16px;
+}
+
+.modal.show {
+display: flex;
+}
+
+.modal iframe {
+width: min(1000px, 94vw);
+height: min(620px, 82vh);
+border: none;
+border-radius: 12px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+background: #000;
+}
+
+@media (max-width: 900px) {
+.hero {
+grid-template-columns: 1fr;
+}
+
+.toolbar {
+grid-template-columns: 1fr;
+}
+
+.count {
+justify-self: start;
+}
+}
+</style>
 </head>
 <body>
-
-<header>
-  <div class="logo">
-    <div class="mark">IS</div>
-    <div>
-      <div style="font-weight:800">Interesting Spear</div>
-      <div style="font-size:12px;color:var(--muted)">Luxury clips for creators</div>
-    </div>
-  </div>
-  <nav class="nav">
-    <a href="#free">Free</a>
-    <a href="#packs">Premium</a>
-    <a href="#faq">FAQ</a>
-  </nav>
+<div class="topbar">
+<header class="container">
+<div class="logo">
+<div class="mark">IS</div>
+<div>
+<div style="font-weight:800">Interesting Spear</div>
+<div style="font-size:12px;color:var(--muted)">Luxury clips for creators</div>
+</div>
+</div>
+<nav class="nav" aria-label="Main navigation">
+<a href="#free">Free Clips</a>
+<a href="#packs">Premium</a>
+<a href="#faq">FAQ</a>
+</nav>
 </header>
+</div>
 
+<main class="container">
 <section class="hero">
-  <div class="hero-left">
-    <h1>Make reels that look rich — cinematic luxury clips.</h1>
-    <p class="lead">50 free high-quality clips to get you started. Unlock the full library of 50,000+ cinematic luxury clips with flexible packs or a subscription.</p>
-  </div>
-  <div class="hero-right"></div>
+<div class="hero-left">
+<div class="eyebrow">Creator Performance Library</div>
+<h1>Make reels that feel premium with cinematic luxury clips.</h1>
+<p class="lead">Start with 50 free high-quality clips, then scale with premium packs built for social media creators, agencies, and brand editors.</p>
+<div class="actions">
+<a class="btn" href="#free">Get Free Clips</a>
+<a class="btn ghost" href="#packs">View Premium Packs</a>
+</div>
+</div>
+<div class="hero-right" role="img" aria-label="Luxury lifestyle visual">
+<div class="hero-stat">
+<div>
+<strong>50,000+</strong>
+<span>Cinematic clips available</span>
+</div>
+</div>
+</div>
 </section>
 
 <section id="free" class="section">
-  <h2>Free 50 Clips</h2>
-  <div class="grid" id="free-grid"></div>
+<h2>Free 50 Clips</h2>
+<p class="subtle">Search and preview the clips instantly before downloading.</p>
+<div class="toolbar" aria-label="Clip controls">
+<input id="searchInput" class="field" type="search" placeholder="Search by clip number (e.g. 12)">
+<select id="sortSelect" aria-label="Sort clips">
+<option value="asc">Sort: Oldest first</option>
+<option value="desc">Sort: Newest first</option>
+</select>
+<div class="count" id="resultCount">Showing 0 clips</div>
+</div>
+<div class="grid" id="free-grid"></div>
 </section>
 
 <section id="packs" class="section">
-  <h2>Premium Packs</h2>
-  <div class="grid">
-    <div class="card"><strong>Starter Pack</strong><p class="muted">1,000 curated luxury clips</p><button class="btn">Buy</button></div>
-    <div class="card"><strong>Pro Pack</strong><p class="muted">10,000 clips — best value</p><button class="btn">Buy</button></div>
-    <div class="card"><strong>Full Vault</strong><p class="muted">All 50,000+ clips</p><button class="btn">Buy</button></div>
-  </div>
+<h2>Premium Packs</h2>
+<p class="subtle">Upgrade when you need more volume, speed, and variety.</p>
+<div class="pricing">
+<article class="card">
+<strong>Starter Pack</strong>
+<div class="price-tag">$19</div>
+<p class="muted">1,000 curated luxury clips for creators getting started.</p>
+<button class="btn" type="button">Buy Starter</button>
+</article>
+<article class="card">
+<strong>Pro Pack</strong>
+<div class="price-tag">$59</div>
+<p class="muted">10,000 clips with broader scene variety and categories.</p>
+<button class="btn" type="button">Buy Pro</button>
+</article>
+<article class="card">
+<strong>Full Vault</strong>
+<div class="price-tag">$129</div>
+<p class="muted">Entire 50,000+ library for teams and high-volume publishing.</p>
+<button class="btn" type="button">Buy Full Vault</button>
+</article>
+</div>
 </section>
 
 <section id="faq" class="section">
-  <h2>FAQ</h2>
-  <details class="card"><summary>How do I get free clips?</summary><p class="muted">They are visible in the Free section above.</p></details>
-  <details class="card"><summary>Licenses?</summary><p class="muted">Commercial use for social media allowed. No resale of raw clips.</p></details>
+<h2>FAQ</h2>
+<details class="card">
+<summary>How do I get free clips?</summary>
+<p class="muted">All free clips are listed above in the Free 50 section with direct download and preview actions.</p>
+</details>
+<details class="card">
+<summary>Can I use these for client projects?</summary>
+<p class="muted">Yes. Commercial social media use is allowed. Resale or redistribution of raw clips is not allowed.</p>
+</details>
 </section>
+</main>
 
 <footer>
-  <div>© Interesting Spear — All rights reserved</div>
+<div class="container">© Interesting Spear — All rights reserved.</div>
 </footer>
 
-<!-- Preview Modal -->
-<div id="previewModal" class="modal" onclick="closePreview()">
-  <iframe id="previewIframe" allow="autoplay"></iframe>
+<div id="previewModal" class="modal" onclick="closePreview()" aria-hidden="true">
+<iframe id="previewIframe" allow="autoplay"></iframe>
 </div>
-
-<!-- Popunder Ad (Propeller) -->
-<script data-cfasync="false" type="text/javascript">
-(()=>{ 
-   // yaha tumhara pura Popunder script paste karo
-})();
-</script>
 
 <script>
 const FREE_CLIPS = [
-  "1Ih36SSEs5tOBEv_qs7rKLvB3PntvtmTZ","1BgJg4IPGoEbHZgxGqAQaqnG_7MtiAsZ9","1bNWEQEJeVEenTiinaVfj1THYbHgK-p5e",
-  "1h0wP-QD61Ga8Z2x7vk-zwqwwMCfogsjv","14M2RYqlgbHqHWGXh5xMut5FIdckyYQ1Q","1cWJK4khw58g9lKPFpFSlOxT-Wn7U6uF6",
-  "10PqDVk_iCgU-n-a4_K-8mayXsjjEfWFA","1Ba9bX5s1kcyOy0LqaAdNYxM8_mX4waqL","1m_aw2GnBUwdLF30zerLjD9DYjxTRYOBW",
-  "1BCS4cTGm3-dyV5avugahBf3sC9cLq2Lg","1j8TJ3qbCKTyUj7sMa--LCNCH4QvX9On3","1Rc-chR1sGuSAgG87GhPnz-_ZI1kdRr5m",
-  "1ED4PPwHdLRDdXuoxn_-qZlYhkUSAyuPu","1v_grbpHTVLSKEpX_bIZCrOc-2wXbqvTM","1nJXeHiGmEylxZe96htprWDppTNUGBmhx",
-  "1xVIPkt4IGEmD8f8Ogd8fTkUNiU0zt26A","1q8Ry9ua8ZkTaamFroxeLEE3Tw-Yc_DZI","1zT0e_2OHopOL_xCiRfITWvyNxMwrbGfs",
-  "1EnWQQN5IKp6A4ONz4s_i0PGAYHm7nzj6","1-Mv6nOsMRZTJMtVLg0Xj3VHJLh13hMUd","1aa_6wMPP1fvNwx_ZU7efsGSJLHGb73Gh",
-  "1UT-bD2hYmMWAHB1_uehactLvJ0aD5Hvg","15Sxcz2D8cAHfkc3WJW-m0mtuOocfS9tl","1S6kgTznX2Jq45nGPp3tHL_8ho_7L53aA",
-  "129ZLbv580rTNK8Ik-9XHxDwsTCXIbXbD","1bkXX-_GpRx8GGrsuc73PborNdMoYHGHw","1lZXh6gBhKpPujRSXHNUhdapGJ4PPNsq7",
-  "1P1so4RBlkI_UjIhXh2A9M1y1_99NkYL9","1vVaA0bOk1G97cf1RozdMzCLVBLXlGIbM","1EWqy3JMJpuPbatf2CMBr34_i1KHbX4cd",
-  "1BENcsQu-TTWPMzbOhekpxkZk_uj865rO","1Cgixx7xOxFE5ZjYrOkZ3ZxS_bpgeuvf8","1GhUTRwczXp1M4-BEH0pLj_B--sO610T0",
-  "1h2mrXWJZWjqwetXYtCc5GGDk-K4r1Y6l","1YJ4XEnsA6iU1DdWfAKMnHf7SRyavMWxZ","1DZ764diUP2y8mwyTWebQCFnToH-OEY01",
-  "1JN8JhdSTXdVUveQJxbjHSUPxnnMDIKRd","1ouM8UXY0vhl83Pe9hxqbNEYFVct6jRB_","1vn_w3UT79EatNl5LMDJkTQuoKGRCH_tb",
-  "1w8ltJqPuhTs4POzapgzukmUMQk8DIu4e","1GrJfV54wFlGEQABRUxBn4qLRJHBJ8Hvt","1x0-vz7FyhoqDBSBsvuWbBY27IG41BylU",
-  "1lJ4YsvBACkGadLzSnRqchUN3-KttIFzG","1IPQ6AXA1_syY9KG5OlrfHr5CEIdRhzN4","1LYTkG89VujNBZCjZNGd7ZWDTUeFE0hZW",
-  "1x5n_6DyrgEkl_5Xxpu14Ey4fPhXq4Kj7","1mN5lKuKfROr9UwuYa9dqi8Ek8gTQLExa","1CLLk-jznQzovxTFK9I3KAhzepAKhGeFz",
-  "1p0hF13l70ihun6mkuQ0d9oT1GTClIaKG","13-CI88FZDlKa9G7Bf4ZH4lGxBzZXWw6w"
+"1Ih36SSEs5tOBEv_qs7rKLvB3PntvtmTZ","1BgJg4IPGoEbHZgxGqAQaqnG_7MtiAsZ9","1bNWEQEJeVEenTiinaVfj1THYbHgK-p5e",
+"1h0wP-QD61Ga8Z2x7vk-zwqwwMCfogsjv","14M2RYqlgbHqHWGXh5xMut5FIdckyYQ1Q","1cWJK4khw58g9lKPFpFSlOxT-Wn7U6uF6",
+"10PqDVk_iCgU-n-a4_K-8mayXsjjEfWFA","1Ba9bX5s1kcyOy0LqaAdNYxM8_mX4waqL","1m_aw2GnBUwdLF30zerLjD9DYjxTRYOBW",
+"1BCS4cTGm3-dyV5avugahBf3sC9cLq2Lg","1j8TJ3qbCKTyUj7sMa--LCNCH4QvX9On3","1Rc-chR1sGuSAgG87GhPnz-_ZI1kdRr5m",
+"1ED4PPwHdLRDdXuoxn_-qZlYhkUSAyuPu","1v_grbpHTVLSKEpX_bIZCrOc-2wXbqvTM","1nJXeHiGmEylxZe96htprWDppTNUGBmhx",
+"1xVIPkt4IGEmD8f8Ogd8fTkUNiU0zt26A","1q8Ry9ua8ZkTaamFroxeLEE3Tw-Yc_DZI","1zT0e_2OHopOL_xCiRfITWvyNxMwrbGfs",
+"1EnWQQN5IKp6A4ONz4s_i0PGAYHm7nzj6","1-Mv6nOsMRZTJMtVLg0Xj3VHJLh13hMUd","1aa_6wMPP1fvNwx_ZU7efsGSJLHGb73Gh",
+"1UT-bD2hYmMWAHB1_uehactLvJ0aD5Hvg","15Sxcz2D8cAHfkc3WJW-m0mtuOocfS9tl","1S6kgTznX2Jq45nGPp3tHL_8ho_7L53aA",
+"129ZLbv580rTNK8Ik-9XHxDwsTCXIbXbD","1bkXX-_GpRx8GGrsuc73PborNdMoYHGHw","1lZXh6gBhKpPujRSXHNUhdapGJ4PPNsq7",
+"1P1so4RBlkI_UjIhXh2A9M1y1_99NkYL9","1vVaA0bOk1G97cf1RozdMzCLVBLXlGIbM","1EWqy3JMJpuPbatf2CMBr34_i1KHbX4cd",
+"1BENcsQu-TTWPMzbOhekpxkZk_uj865rO","1Cgixx7xOxFE5ZjYrOkZ3ZxS_bpgeuvf8","1GhUTRwczXp1M4-BEH0pLj_B--sO610T0",
+"1h2mrXWJZWjqwetXYtCc5GGDk-K4r1Y6l","1YJ4XEnsA6iU1DdWfAKMnHf7SRyavMWxZ","1DZ764diUP2y8mwyTWebQCFnToH-OEY01",
+"1JN8JhdSTXdVUveQJxbjHSUPxnnMDIKRd","1ouM8UXY0vhl83Pe9hxqbNEYFVct6jRB_","1vn_w3UT79EatNl5LMDJkTQuoKGRCH_tb",
+"1w8ltJqPuhTs4POzapgzukmUMQk8DIu4e","1GrJfV54wFlGEQABRUxBn4qLRJHBJ8Hvt","1x0-vz7FyhoqDBSBsvuWbBY27IG41BylU",
+"1lJ4YsvBACkGadLzSnRqchUN3-KttIFzG","1IPQ6AXA1_syY9KG5OlrfHr5CEIdRhzN4","1LYTkG89VujNBZCjZNGd7ZWDTUeFE0hZW",
+"1x5n_6DyrgEkl_5Xxpu14Ey4fPhXq4Kj7","1mN5lKuKfROr9UwuYa9dqi8Ek8gTQLExa","1CLLk-jznQzovxTFK9I3KAhzepAKhGeFz",
+"1p0hF13l70ihun6mkuQ0d9oT1GTClIaKG","13-CI88FZDlKa9G7Bf4ZH4lGxBzZXWw6w"
 ];
 
+const searchInput = document.getElementById('searchInput');
+const sortSelect = document.getElementById('sortSelect');
+const resultCount = document.getElementById('resultCount');
 const freeGrid = document.getElementById('free-grid');
-FREE_CLIPS.forEach((id, i) => {
-  const downloadURL = `https://drive.google.com/uc?export=download&id=${id}`;
-  const previewURL  = `https://drive.google.com/file/d/${id}/preview`;
-  const thumbURL    = `https://drive.google.com/thumbnail?id=${id}`;
 
-  const el = document.createElement('div');
-  el.className = 'card';
-  el.innerHTML = `
-    <div class="clip-thumb">
-      <video muted preload="metadata" src="${downloadURL}" poster="${thumbURL}"></video>
-    </div>
-    <div class="meta"><div>Clip ${i+1}</div><div class="free-badge">FREE</div></div>
-    <div style="margin-top:8px;display:flex;gap:8px">
-      <button class="btn" onclick="window.open('${downloadURL}','_blank')">Download</button>
-      <button class="btn ghost" onclick="openPreview('${previewURL}')">Preview</button>
-    </div>
-  `;
-  freeGrid.appendChild(el);
+const clips = FREE_CLIPS.map((id, index) => ({ id, index: index + 1 }));
+
+function getFilteredClips() {
+const query = searchInput.value.trim();
+const sort = sortSelect.value;
+const filtered = clips.filter((clip) => String(clip.index).includes(query));
+filtered.sort((a, b) => sort === 'desc' ? b.index - a.index : a.index - b.index);
+return filtered;
+}
+
+function renderClips() {
+const visible = getFilteredClips();
+const fragment = document.createDocumentFragment();
+
+visible.forEach((clip) => {
+const downloadURL = `https://drive.google.com/uc?export=download&id=${clip.id}`;
+const previewURL = `https://drive.google.com/file/d/${clip.id}/preview`;
+const thumbURL = `https://drive.google.com/thumbnail?id=${clip.id}`;
+
+const el = document.createElement('div');
+el.className = 'card';
+el.innerHTML = `
+<div class="clip-thumb">
+<video muted preload="none" playsinline src="${downloadURL}" poster="${thumbURL}"></video>
+</div>
+<div class="meta">
+<div>Clip ${clip.index}</div>
+<div class="free-badge">FREE</div>
+</div>
+<p class="muted">Ready for reels, edits, and lifestyle content.</p>
+<div class="card-actions">
+<button class="btn" type="button" onclick="window.open('${downloadURL}','_blank')">Download</button>
+<button class="btn ghost" type="button" onclick="openPreview('${previewURL}')">Preview</button>
+</div>
+`;
+fragment.appendChild(el);
 });
 
-function openPreview(src){
-  // Interstitial reload trick
-  let old = document.getElementById("interstitialScript");
-  if(old) old.remove();
-
-  let s = document.createElement("script");
-  s.id = "interstitialScript";
-  s.dataset.zone = "9899649"; // apna zone id
-  s.src = "https://groleegni.net/vignette.min.js";
-  document.body.appendChild(s);
-
-  // Delay ke baad modal show
-  setTimeout(()=>{
-    const modal=document.getElementById('previewModal');
-    const iframe=document.getElementById('previewIframe');
-    iframe.src=src;
-    modal.classList.add('show');
-  }, 4000);
+freeGrid.innerHTML = '';
+freeGrid.appendChild(fragment);
+resultCount.textContent = `Showing ${visible.length} clip${visible.length === 1 ? '' : 's'}`;
 }
 
-function closePreview(){
-  const modal=document.getElementById('previewModal');
-  const iframe=document.getElementById('previewIframe');
-  iframe.src="";
-  modal.classList.remove('show');
+function openPreview(src) {
+const modal = document.getElementById('previewModal');
+const iframe = document.getElementById('previewIframe');
+iframe.src = src;
+modal.classList.add('show');
+modal.setAttribute('aria-hidden', 'false');
 }
+
+function closePreview() {
+const modal = document.getElementById('previewModal');
+const iframe = document.getElementById('previewIframe');
+iframe.src = '';
+modal.classList.remove('show');
+modal.setAttribute('aria-hidden', 'true');
+}
+
+searchInput.addEventListener('input', renderClips);
+sortSelect.addEventListener('change', renderClips);
+document.addEventListener('keydown', (event) => {
+if (event.key === 'Escape') {
+closePreview();
+}
+});
+
+renderClips();
 </script>
-
 </body>
 </html>
