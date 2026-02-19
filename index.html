@@ -384,7 +384,7 @@ justify-self: start;
 <header class="container">
 <div class="logo">
 <div class="mark">IS
-<img src="https://drive.google.com/uc?export=view&id=11mHMusRCGt1iG6ZVbkzKpJZxgwoGAc_r" alt="Interesting Spear profile picture" onerror="this.remove()">
+<img id="logoProfileImg" alt="Interesting Spear profile picture" hidden>
 </div>
 <div>
 <div style="font-weight:800">Interesting Spear</div>
@@ -506,6 +506,34 @@ const sortSelect = document.getElementById('sortSelect');
 const resultCount = document.getElementById('resultCount');
 const freeGrid = document.getElementById('free-grid');
 
+const LOGO_IMAGE_ID = '11mHMusRCGt1iG6ZVbkzKpJZxgwoGAc_r';
+const LOGO_IMAGE_SOURCES = [
+`https://drive.google.com/uc?export=download&id=${LOGO_IMAGE_ID}`,
+`https://drive.google.com/uc?export=view&id=${LOGO_IMAGE_ID}`,
+`https://lh3.googleusercontent.com/d/${LOGO_IMAGE_ID}=s200`,
+`https://drive.google.com/thumbnail?id=${LOGO_IMAGE_ID}&sz=w200`
+];
+
+function initLogoProfileImage() {
+const logoImg = document.getElementById('logoProfileImg');
+if (!logoImg) return;
+let sourceIndex = 0;
+
+function tryNextSource() {
+if (sourceIndex >= LOGO_IMAGE_SOURCES.length) {
+logoImg.remove();
+return;
+}
+logoImg.src = LOGO_IMAGE_SOURCES[sourceIndex++];
+}
+
+logoImg.addEventListener('load', () => {
+logoImg.hidden = false;
+}, { once: true });
+logoImg.addEventListener('error', tryNextSource);
+tryNextSource();
+}
+
 const clips = FREE_CLIPS.map((id, index) => ({ id, index: index + 1 }));
 
 function getFilteredClips() {
@@ -573,6 +601,7 @@ closePreview();
 }
 });
 
+initLogoProfileImage();
 renderClips();
 </script>
 </body>
