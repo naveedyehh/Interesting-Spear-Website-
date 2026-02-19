@@ -63,22 +63,6 @@ gap: 12px;
 align-items: center;
 min-width: fit-content;
 }
-  
-
-.brand-name {
-display: flex;
-align-items: center;
-gap: 8px;
-font-weight: 800;
-}
-
-.profile-pic {
-width: 28px;
-height: 28px;
-border-radius: 50%;
-object-fit: cover;
-border: 1px solid var(--line);
-}
 
 .logo .mark {
 width: 44px;
@@ -91,8 +75,8 @@ justify-content: center;
 color: #050505;
 font-weight: 800;
 box-shadow: 0 10px 24px rgba(212, 175, 55, 0.2);
-}
 overflow: hidden;
+position: relative;
 }
 
 .logo .mark img {
@@ -100,7 +84,10 @@ width: 100%;
 height: 100%;
 object-fit: cover;
 display: block;
+position: absolute;
+inset: 0;
 }
+
 .nav {
 display: flex;
 align-items: center;
@@ -396,8 +383,8 @@ justify-self: start;
 <div class="topbar">
 <header class="container">
 <div class="logo">
-<div class="mark">
-<img src="https://drive.google.com/uc?export=view&id=11mHMusRCGt1iG6ZVbkzKpJZxgwoGAc_r" alt="Interesting Spear profile picture">
+<div class="mark">IS
+<img src="https://drive.google.com/uc?export=view&id=11mHMusRCGt1iG6ZVbkzKpJZxgwoGAc_r" alt="Interesting Spear profile picture" onerror="this.remove()">
 </div>
 <div>
 <div style="font-weight:800">Interesting Spear</div>
@@ -590,6 +577,3 @@ renderClips();
 </script>
 </body>
 </html>
-
-
-
